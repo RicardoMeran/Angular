@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./fist.component.css']
 })
 export class FistComponent implements OnInit {
-
+  public nombre: string = 'Ricardo Meran';
+  public bio: string = 'Coming soon Front End Angular';
+  
   constructor() { }
 
   ngOnInit() {
