@@ -1,9 +1,13 @@
-<h1> Ingresar datos</h1>
+<h1> Ingresa tus datos</h1>
 
 <div>
-    <input type="text">
+     
+    <h2> Ingresa tu nombre</h2>
+    <input type="text" [(ngModel)]="NombreInput">
 
-    <input type="text">
+<br>
+    <h2>Ingresa tu Profesion o Habilidad</h2>
+    <input type="text" [(ngModel)]="BioInput">
 </div>
 
 <h2> Presentacion</h2>
@@ -12,11 +16,11 @@
 <h4>Nombre</h4>
 
 <p>
-    {{nombre}}
+    {{NombreInput}}
 </p>
 
 <h4>Biografia</h4>
 
 <p>
-    {{bio}}
+    {{BioInput}}
 </p>
