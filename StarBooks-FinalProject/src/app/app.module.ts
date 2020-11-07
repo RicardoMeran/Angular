@@ -6,17 +6,25 @@ import { AppComponent } from './app.component';
 import { LoggingComponent } from './logging/logging.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { LobbyComponent } from './lobby/lobby.component';
+import { BooksComponent } from './books/books.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoggingComponent
+    LoggingComponent,
+    LobbyComponent,
+    BooksComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    RouterModule,
+    RouterModule.forRoot([
+      {path:'', component: LobbyComponent},
+      {path:'logging', component: LoggingComponent},
+      {path:'books', component: BooksComponent}
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-logging',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./logging.component.css']
 })
 export class LoggingComponent implements OnInit {
+  public form: FormGroup;
 
   constructor() { }
 
