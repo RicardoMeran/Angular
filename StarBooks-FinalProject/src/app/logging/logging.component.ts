@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-logging',
@@ -7,9 +7,15 @@ import { FormGroup } from '@angular/forms';
   styleUrls: ['./logging.component.css']
 })
 export class LoggingComponent implements OnInit {
-  public form: FormGroup;
+  public emailControl: FormControl = new FormControl();
+  public passwordControl: FormControl = new FormControl();
+  public form: FormGroup = new FormGroup({
+    'emailControl':this.emailControl,
+    'passwordControl':this.passwordControl });
 
-  constructor() { }
+  constructor() { 
+
+  }
 
   ngOnInit() {
   }
