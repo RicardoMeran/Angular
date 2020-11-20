@@ -7,8 +7,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./logging.component.css']
 })
 export class LoggingComponent implements OnInit {
-  public emailControl: FormControl = new FormControl('',Validators.email);
-  public passwordControl: FormControl = new FormControl('',[Validators.minLength(3),Validators.maxLength(7)]);
+  public emailControl: FormControl = new FormControl('',[Validators.email,Validators.required]);
+  public passwordControl: FormControl = new FormControl('',[Validators.minLength(3),Validators.maxLength(7),Validators.required]);
   public form: FormGroup = new FormGroup({
     'emailControl':this.emailControl,
     'passwordControl':this.passwordControl
@@ -22,6 +22,7 @@ export class LoggingComponent implements OnInit {
   }
 
   public save() {
+    this.emailControl.markAsTouched();
     console.log (this.form);
   }
 
