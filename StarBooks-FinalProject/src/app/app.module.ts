@@ -8,6 +8,9 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LobbyComponent } from './lobby/lobby.component';
 import { BooksComponent } from './books/books.component';
+import { AngularFireModule } from '@angular/fire';
+import {AngularFireAuthModule} from '@angular/fire/auth';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,9 @@ import { BooksComponent } from './books/books.component';
       {path:'', component: LobbyComponent},
       {path:'logging', component: LoggingComponent},
       {path:'books', component: BooksComponent}
-    ])
+    ]),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

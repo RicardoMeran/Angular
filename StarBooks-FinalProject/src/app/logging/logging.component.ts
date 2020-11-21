@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireModule, FirebaseApp } from '@angular/fire';
+import {AngularFireAuth} from '@angular/fire/auth';
+import {auth} from 'firebase/app';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -14,16 +17,23 @@ export class LoggingComponent implements OnInit {
     'passwordControl':this.passwordControl
    });
 
-  constructor() { 
+  constructor(private authService: AngularFireAuth) { 
     
   }
 
   ngOnInit() {
   }
 
+  login () {
+
+  };
+
+  loginWithGoogle() {
+    this.authService.auth.signInWithPopup(new auth.GoogleAuthProvider());
+  }
+
   public save() {
     this.emailControl.markAsTouched();
-    console.log (this.form);
   }
 
 }
